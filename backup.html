@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Webpage</title>
+    <title>Sketch</title>
     <script>
     function dropdown() {
       document.getElementById("dropdown2").classList.toggle("show");
@@ -50,7 +50,7 @@ function stickyf() {
           font-family: "Asap", sans-serif;
         }
 body {
-  width: 100vw;
+  width: 100%;
   height: 2000px;
   margin: 0%;
   position: absolute;;
@@ -163,11 +163,30 @@ a:hover {
  margin-top: auto;
  margin-bottom: auto;
 }
-
+.images1 {
+  height: 100px;
+  width: 100px;
+  object-fit: scale-down;
+}
+.images1 {
+  width:332px;
+  height: 187px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px
+}
 img {width: 100%}
 
+.images1 {
+  text-align: center;
+  padding: 0 0 90px 0;
+}
 .description  {
   position: absolute;
+  margin: auto;
+}
+img {
+  max-width: 100%;
   margin: auto;
 }
 .imgtext {
@@ -188,7 +207,7 @@ img {width: 100%}
 .sticky {
   position: fixed;
   top: 0;
-  width: 100vw;
+  width: 100%;
 }
 #story {
   max-width: 100vw;
@@ -196,32 +215,21 @@ img {width: 100%}
 }
 p {
   font-weight: 600;
-  width: 400px;
 }
-.btns {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+.scrolling-gallery {
+    height: 100vh; /* Full viewport height */
+    overflow-y: scroll;
 }
 
-.btns button {
-  border-radius: 10px;
-  border: none;
-  max-width: 100vw;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  font-size: medium;
-  margin: 5px;
+.gallery-container {
+    display: flex;
+    flex-direction: column;
 }
 
-.btns button:hover {
-  border-radius: 5px;
-  border: none;
-  background: #333;
-  color: white;
-  transition: 0.5s;
+.gallery-container img {
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
 }
       </style>
 </head>
@@ -257,11 +265,28 @@ p {
         <p id="mediumtext">Handcrafted with precision and engineered for perfection, the Superleggera V4 is a marvel of modern technology. Limited to only 500 numbered units, each bike is a testament to Ducati's relentless pursuit of excellence and innovation.</p>
         <p style="text-align: center; font-size: medium; color: rgb(255, 255, 255);width: 100%;">Image courtesy of Ducati.</p>
       </div>
-      <div class="btns">
-        <button>Overview</button>
-        <button>Technical Specification</button>
-        <button>Experience</button>
+<div id="story" style="display: flex; justify-content: left; width: 100vw;text-align: left;">
+  <div style="width: 700px;">
+    <p style="width: 600px;font-weight: 700; font-size: larger; margin-top: 10%; text-align: left;">Unleashing the Superleggera V4: The Epitome of Exhilaration</p>
+    <p>In the world of high-performance motorcycles, the Superleggera V4 stands as a testament to engineering brilliance and unparalleled design. Born from the relentless pursuit of perfection, this masterpiece merges cutting-edge technology with breathtaking aesthetics, embodying the very essence of speed and agility.</p>
+    <p>Crafted with a meticulous attention to detail, the Superleggera V4 boasts a lightweight carbon fiber frame, reducing weight while enhancing structural integrity. Every curve and contour is sculpted to perfection, ensuring not just aerodynamic efficiency but also a visual feast for the eyes. The striking red and black color scheme, complemented by subtle yet bold graphics, exudes an aura of power and elegance, making it a true work of art on wheels.</p>
+    <p>Underneath its sleek exterior lies a heart that beats with raw power. The 998cc Desmosedici Stradale R engine roars to life, delivering a spine-tingling symphony of performance. With over 230 horsepower at your command, the Superleggera V4 accelerates with an urgency that defies gravity, propelling you into a realm where speed and precision coexist in perfect harmony.</p>
+    <p>But it's not just about power; it's about control. The advanced electronics suite, featuring state-of-the-art traction control, wheelie control, and slide control, ensures that every ounce of power is harnessed with pinpoint accuracy. The Öhlins suspension system, along with Brembo brakes, provides unmatched handling and stopping power, giving riders the confidence to push the limits on both road and track.</p>
+    <p>Riding the Superleggera V4 is not merely a journey; it's an experience. It’s the feeling of wind rushing past, the symphony of the engine echoing in your ears, and the thrill of conquering every twist and turn with finesse. It’s the embodiment of freedom and the epitome of exhilaration.</p>
+    <p>The Superleggera V4 is more than a motorcycle; it’s a statement. It’s for those who crave the extraordinary, who seek the pinnacle of performance, and who refuse to settle for anything less than perfection. This is the Superleggera V4 – where innovation meets inspiration, and where every ride is a celebration of pure, unadulterated passion.</p>
+    <div class="scrolling-gallery">
+      <div class="gallery-container">
+          <img src="D:\code\hm\images\pictures\Ducati-Superleggera-Performance-01-Video-Full-1330x748.jpg" alt="Image 1">
+          <img src="D:\code\hm\images\pictures\SLV4-Performance-02-gallery-1920x1080.jpg" alt="Image 2">
+          <img src="D:\code\hm\images\pictures\SLV4-Performance-03-gallery-1920x1080.jpg" alt="Image 3">
+          <img src="D:\code\hm\images\pictures\SLV4-Performance-05-gallery-1920x1080.jpg" alt="Image 4">
+          <img src="D:\code\hm\images\pictures\SLV4-Performance-09-gallery-1920x1080.jpg" alt="Image 5">
+          <!-- Add more images as needed -->
       </div>
+  </div>
+  </div>
+</div>
+
       </div>
      <!-- <div class="images1">
       <div>

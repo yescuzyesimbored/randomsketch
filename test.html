@@ -3,113 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Scrolling Gallery with Hover Effects</title>
     <style>
-body{margin:0;}
-.step{
-  width: 100%;
-  height: 400px;
-  line-height: 16.5vw;
-  font-size: 10vw;
-  background-color: #28a92b;
-  z-index: 100;
-  text-align: center;
-}
-.step h2{
-  font-size:50px;
-  color:#fff;
-  margin:0;
-}
-.one {
-  background: #7b1fa2;
+body {
+    font-family: Arial, sans-serif;
 }
 
-.two {
-  background: #1976d2;
+.scrolling-gallery {
+    overflow-y: scroll; /* Enable vertical scrolling */
+    height: 80vh; /* Adjust height as needed */
+    direction: rtl; /* Flip the direction to move scrollbar to the left */
+    position: relative; /* Ensure proper positioning for children */
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
 }
 
-.three{
-  background: #00796b;
+.scrolling-gallery::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+    background-color: #f1f1f1; /* Background color of the scrollbar track */
 }
 
-.four {
-  background: #388e3c;
+.scrolling-gallery::-webkit-scrollbar-thumb {
+    background-color: #888; /* Initial color of the scrollbar handle */
+    border-radius: 10px; /* Round the edges of the scrollbar handle */
 }
 
-
-#viewport {
-  overflow: hidden;
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+/* Add a wrapper for smooth transitions */
+.scrolling-gallery:hover::-webkit-scrollbar-thumb {
+    background-color: #ff0000; /* Color of the scrollbar handle on hover */
+    transition: background-color 500ms; /* Smooth transition for color change */
 }
 
-#scroll-container {
-  position: absolute;  
-  overflow: hidden;
-  width: 100%;
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    direction: ltr; /* Ensure content flows normally */
 }
+
+.gallery-item {
+    position: relative;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    transition: filter 0.3s ease;
+}
+
+.gallery-item:hover img {
+    filter: blur(5px); /* Blur effect on hover */
+}
+
+.gallery-item .description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+    color: #333;
+    padding: 10px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .description {
+    opacity: 1; /* Show description on hover */
+}
+
     </style>
-    <script>
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-
-let container = document.querySelector("#scroll-container");
-
-let height;
-function setHeight() {
-  height = container.clientHeight;
-  document.body.style.height = height + "px";
-}
-ScrollTrigger.addEventListener("refreshInit", setHeight);
-
-// smooth scrolling container
-gsap.to(container, {
-  y: () => -(height - document.documentElement.clientHeight),
-  ease: "none",
-  scrollTrigger: {
-    trigger: document.body,
-    start: "top top",
-    end: "bottom bottom",
-    scrub: 1,
-    invalidateOnRefresh: true
-  }
-});
-
-// scrolltrigger for each box
-gsap.utils.toArray('.step').forEach(box => {
-  gsap.to(box, {
-    backgroundColor: '#000',
-    scrollTrigger: {
-      trigger: box,
-      start: 'top top',
-      toggleActions: 'play none none reverse',
-      markers: true
-    }
-  });
-});
-    </script>
 </head>
 <body>
-    <div id="viewport" class="viewport">
-        <div id="scroll-container" class="scroll-container"> 
-          <section class="step one">
-            <h2>Section One</h2>
-          </section>
-          <section class="step two">
-            <h2>Section two</h2>
-          </section>
-          <section class="step three">
-            <h2>Section three</h2>
-          </section>
-          <section class="step four">
-            <h2>Section four</h2>
-          </section>
-          
+    <div id="story" style="display: flex; justify-content: space-between; width: 100vw; text-align: left;">
+        <div style="width: 60%; padding-right: 20px;">
+            <p style="font-weight: 700; font-size: larger; margin-top: 10%; text-align: left;">Unleashing the Superleggera V4: The Epitome of Exhilaration</p>
+            <p>In the world of high-performance motorcycles, the Superleggera V4 stands as a testament to engineering brilliance and unparalleled design. Born from the relentless pursuit of perfection, this masterpiece merges cutting-edge technology with breathtaking aesthetics, embodying the very essence of speed and agility.</p>
+            <p>Crafted with a meticulous attention to detail, the Superleggera V4 boasts a lightweight carbon fiber frame, reducing weight while enhancing structural integrity. Every curve and contour is sculpted to perfection, ensuring not just aerodynamic efficiency but also a visual feast for the eyes. The striking red and black color scheme, complemented by subtle yet bold graphics, exudes an aura of power and elegance, making it a true work of art on wheels.</p>
+            <p>Underneath its sleek exterior lies a heart that beats with raw power. The 998cc Desmosedici Stradale R engine roars to life, delivering a spine-tingling symphony of performance. With over 230 horsepower at your command, the Superleggera V4 accelerates with an urgency that defies gravity, propelling you into a realm where speed and precision coexist in perfect harmony.</p>
+            <p>But it's not just about power; it's about control. The advanced electronics suite, featuring state-of-the-art traction control, wheelie control, and slide control, ensures that every ounce of power is harnessed with pinpoint accuracy. The Öhlins suspension system, along with Brembo brakes, provides unmatched handling and stopping power, giving riders the confidence to push the limits on both road and track.</p>
+            <p>Riding the Superleggera V4 is not merely a journey; it's an experience. It’s the feeling of wind rushing past, the symphony of the engine echoing in your ears, and the thrill of conquering every twist and turn with finesse. It’s the embodiment of freedom and the epitome of exhilaration.</p>
+            <p>The Superleggera V4 is more than a motorcycle; it’s a statement. It’s for those who crave the extraordinary, who seek the pinnacle of performance, and who refuse to settle for anything less than perfection. This is the Superleggera V4 – where innovation meets inspiration, and where every ride is a celebration of pure, unadulterated passion.</p>
         </div>
-      </div>
+        <div class="scrolling-gallery" style="width: 35%; overflow-y: scroll; height: 80vh;">
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="D:\code\hm\images\pictures\Ducati-Superleggera-Performance-01-Video-Full-1330x748.jpg" alt="Image 1">
+                    <div class="description">The collaboration of Ducati designers with Alessandro Valia, official Ducati pilot and tester, translates into extraordinary sensations.</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="D:\code\hm\images\pictures\SLV4-Performance-02-gallery-1920x1080.jpg" alt="Image 2">
+                    <div class="description">Image 2 Description</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="D:\code\hm\images\pictures\SLV4-Performance-03-gallery-1920x1080.jpg" alt="Image 3">
+                    <div class="description">Image 3 Description</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="D:\code\hm\images\pictures\SLV4-Performance-05-gallery-1920x1080.jpg" alt="Image 4">
+                    <div class="description">Image 4 Description</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="D:\code\hm\images\pictures\SLV4-Performance-09-gallery-1920x1080.jpg" alt="Image 5">
+                    <div class="description">Image 5 Description</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
